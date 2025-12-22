@@ -1,0 +1,7 @@
+# Dépendances et fichiers ignorés
+node_modules/
+.env
+.env.local
+env.js
+*.log
+.DS_Store
