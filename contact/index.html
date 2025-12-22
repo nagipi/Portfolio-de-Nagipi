@@ -8,15 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Glitch&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☠️</text></svg>">
-    <link rel="stylesheet" href="style.css">
-    <script src="env.js"></script>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <!-- Textes verticaux sur les côtés -->
     <div class="side-decor left">GET_IN_TOUCH /// CONTACT_ME /// REACH_OUT</div>
     <div class="side-decor right">LETS_TALK /// MESSAGE /// 2025</div>
     
-    <!-- Badges Web style 2000s -->
     <div class="sidebar-badges left-badges">
         <div class="badge b1">MAIL</div>
         <div class="badge b2">CHAT</div>
@@ -49,7 +46,7 @@
                     Je réponds en 24-48 heures.
                 </p>
                 <div class="hero__cta">
-                    <a href="index.html" class="btn btn--ghost">← Retour</a>
+                    <a href="../" class="btn btn--ghost">← Retour</a>
                 </div>
             </div>
         </div>
@@ -91,7 +88,7 @@
                 <h3>Envoie-moi un message</h3>
                 <p>Remplis ce formulaire et je te répondrai dès que possible</p>
             </div>
-            <form class="contact-form" id="contactForm" method="POST">
+            <form class="contact-form" id="contactForm" method="POST" action="https://formspree.io/f/mlgrlygz">
                 <div class="form-group">
                     <label for="nom">Ton nom *</label>
                     <input type="text" id="nom" name="name" required placeholder="Ex: Tyler Dudun">
@@ -152,21 +149,17 @@
     <footer class="footer">
         <p>© 2025 Nagipi - Tous droits réservés | Portfolio personnel</p>
         <p class="footer-links">
-            <a href="index.html">Accueil</a> · 
-            <a href="contact.html">Contact</a> · 
-            <a href="mentions-legales.html">Mentions légales</a>
+            <a href="../">Accueil</a> · 
+            <a href="../contact">Contact</a> · 
+            <a href="../mentions-legales">Mentions légales</a>
         </p>
     </footer>
 
-    <!-- Back to top button -->
     <button id="backToTop" class="back-to-top">↑</button>
 
     <script>
-        // Configure le formulaire avec l'ID Formspree depuis env.js
         const contactForm = document.getElementById('contactForm');
-        contactForm.action = `https://formspree.io/f/${CONFIG.formspreeId}`;
 
-        // Gère l'envoi du formulaire sans redirection
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -206,7 +199,6 @@
             }
         });
 
-        // Bouton retour haut
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
@@ -221,7 +213,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Active les animations au scroll sur cette page
         document.body.classList.add('has-anim');
         const observerOptions = {
             threshold: 0.15,
